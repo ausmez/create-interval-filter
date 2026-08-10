@@ -1,0 +1,21 @@
+{
+  "createintervalfilter.gui.interval_filter.best_effort": "尽力",
+  "createintervalfilter.gui.interval_filter.best_effort.description": "跳过无效位置，并继续尝试下一个位置",
+  "createintervalfilter.gui.interval_filter.interval": "方块间隔",
+  "createintervalfilter.gui.interval_filter.interval.description": "每次触发方块放置之间的间隔",
+  "createintervalfilter.gui.interval_filter.offset": "初始偏移",
+  "createintervalfilter.gui.interval_filter.offset.description": "首次放置前跳过的方块数",
+  "createintervalfilter.gui.interval_filter.placement_mode": "放置模式",
+  "createintervalfilter.gui.interval_filter.placement_mode.description": "设置多个过滤器后生效",
+  "createintervalfilter.gui.interval_filter.random": "随机",
+  "createintervalfilter.gui.interval_filter.sequential": "顺序",
+  "createintervalfilter.gui.interval_filter.strict": "严格",
+  "createintervalfilter.gui.interval_filter.strict.description": "仅在间隔精确的位置上放置",
+  "item.createintervalfilter.interval_filter": "间隔过滤器",
+  "item.createintervalfilter.interval_filter.tooltip.behaviour1": "打开 _配置界面_.",
+  "item.createintervalfilter.interval_filter.tooltip.condition1": "右击",
+  "item.createintervalfilter.interval_filter.tooltip.interval": "所有 %s 方块%s",
+  "item.createintervalfilter.interval_filter.tooltip.offset": "(+%s 初始偏移)",
+  "item.createintervalfilter.interval_filter.tooltip.summary": "按固定移动间隔触发物品放置。 可用于动态结构上机械手的过滤槽。",
+  "itemGroup.createintervalfilter.base": "机械动力：间隔过滤器"
+}
