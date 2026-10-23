@@ -1,0 +1,8 @@
+{
+  "item.createintervalfilter.interval_filter.tooltip.summary": "_Triggers_ item placement at fixed movement _intervals_. Can be used in Deployer _Filter Slots_ on Contraptions",
+  "item.createintervalfilter.interval_filter.tooltip.condition1": "When R-Clicked",
+  "item.createintervalfilter.interval_filter.tooltip.behaviour1": "Opens the _configuration interface_.",
+  "item.createintervalfilter.interval_filter.tooltip.interval": "Every %s block%s",
+  "item.createintervalfilter.interval_filter.tooltip.offset": "(+%s initial offset)"
+}
+

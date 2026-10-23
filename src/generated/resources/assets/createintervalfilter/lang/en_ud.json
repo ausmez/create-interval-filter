@@ -1,0 +1,21 @@
+{
+  "createintervalfilter.gui.interval_filter.best_effort": "ʇɹoɟɟƎ ʇsǝᗺ",
+  "createintervalfilter.gui.interval_filter.best_effort.description": "uoıʇısod ʇxǝu ǝɥʇ buıʎɹʇ dǝǝʞ puɐ suoıʇısod pıןɐʌuı dıʞS",
+  "createintervalfilter.gui.interval_filter.interval": "ןɐʌɹǝʇuI ʞɔoןᗺ",
+  "createintervalfilter.gui.interval_filter.interval.description": "ɹǝbbıɹʇ ʇuǝɯǝɔɐןd ɥɔɐǝ uǝǝʍʇǝq sʞɔoןᗺ",
+  "createintervalfilter.gui.interval_filter.offset": "ʇǝsɟɟO ןɐıʇıuI",
+  "createintervalfilter.gui.interval_filter.offset.description": "ʇuǝɯǝɔɐןd ʇsɹıɟ ǝɹoɟǝq sʞɔoןᗺ",
+  "createintervalfilter.gui.interval_filter.placement_mode": "ǝpoW ʇuǝɯǝɔɐןԀ",
+  "createintervalfilter.gui.interval_filter.placement_mode.description": "ʇǝs sɯǝʇı ɹǝʇןıɟ ǝןdıʇןnɯ uǝɥʍ ǝʌıʇɔⱯ",
+  "createintervalfilter.gui.interval_filter.random": "ɯopuɐᴚ",
+  "createintervalfilter.gui.interval_filter.sequential": "ןɐıʇuǝnbǝS",
+  "createintervalfilter.gui.interval_filter.strict": "ʇɔıɹʇS",
+  "createintervalfilter.gui.interval_filter.strict.description": "suoıʇısod ןɐʌɹǝʇuı ʇɔɐxǝ ʇɐ ʎoןdǝp ʎןuO",
+  "item.createintervalfilter.interval_filter": "ɹǝʇןıℲ ןɐʌɹǝʇuI",
+  "item.createintervalfilter.interval_filter.tooltip.behaviour1": "˙‾ǝɔɐɟɹǝʇuı uoıʇɐɹnbıɟuoɔ‾ ǝɥʇ suǝdO",
+  "item.createintervalfilter.interval_filter.tooltip.condition1": "pǝʞɔıןƆ-ᴚ uǝɥM",
+  "item.createintervalfilter.interval_filter.tooltip.interval": "%sʞɔoןq %s ʎɹǝʌƎ",
+  "item.createintervalfilter.interval_filter.tooltip.offset": ")ʇǝsɟɟo ןɐıʇıuı %s+(",
+  "item.createintervalfilter.interval_filter.tooltip.summary": "suoıʇdɐɹʇuoƆ uo ‾sʇoןS ɹǝʇןıℲ‾ ɹǝʎoןdǝᗡ uı pǝsn ǝq uɐƆ ˙‾sןɐʌɹǝʇuı‾ ʇuǝɯǝʌoɯ pǝxıɟ ʇɐ ʇuǝɯǝɔɐןd ɯǝʇı ‾sɹǝbbıɹ⟘‾",
+  "itemGroup.createintervalfilter.base": "ɹǝʇןıℲ ןɐʌɹǝʇuI :ǝʇɐǝɹƆ"
+}

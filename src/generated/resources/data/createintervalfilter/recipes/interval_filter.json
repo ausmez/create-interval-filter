@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "create:andesite_alloy"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "   ",
+    "AWA",
+    "   "
+  ],
+  "result": {
+    "item": "createintervalfilter:interval_filter"
+  },
+  "show_notification": true
+}
