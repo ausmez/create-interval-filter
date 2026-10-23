@@ -1,19 +1,19 @@
 # Create: Interval Filter
 
-A small addon for [Create](https://modrinth.com/mod/create) that adds the **Interval Filter** — a filter item that
-configures a Deployer to activate every X blocks as a contraption moves.
+A small addon for [Create](https://modrinth.com/mod/create) that adds the **Interval Filter** — a filter item that configures a Deployer to
+activate at set distance intervals as a contraption moves.
 
 <p style="text-align:center;">
   <img src=".github/images/icon.png" alt="Create: Interval Filter">
 </p>
 
 <p style="text-align:center;">
-  <!-- a href="https://modrinth.com/mod/create-interval-filter"><img src="https://img.shields.io/modrinth/dt/create-interval-filter?logo=modrinth&label=Modrinth&color=00af5c" alt="Modrinth"></a -->
-  <!-- a href="https://www.curseforge.com/minecraft/mc-mods/create-interval-filter"><img src="https://img.shields.io/curseforge/dt/1281770?logo=curseforge&label=CurseForge&color=f16436" alt="CurseForge"></a-->
+  <!-- a href="https://modrinth.com/mod/create-interval-filter"><img src="https://img.shields.io/modrinth/dt/create-interval-filter?logo=modrinth&label=Modrinth&color=00af5c" alt="Modrinth"></a-->
+  <!--a href="https://www.curseforge.com/minecraft/mc-mods/create-interval-filter"><img src="https://img.shields.io/curseforge/dt/1530378?logo=curseforge&label=CurseForge&color=f16436" alt="CurseForge"></a-->
   <a href="https://github.com/Creators-of-Create/Create"><img src="https://img.shields.io/badge/Create-6.0.7%2B-4b8bc2" alt="Create"></a>
   <a href="https://neoforged.net"><img src="https://img.shields.io/badge/NeoForge-21.1.181%2B-d88231" alt="NeoForged"></a>
   <a href="https://files.minecraftforge.net"><img src="https://img.shields.io/badge/Forge-47.3.30%2B-26303d" alt="Forge"></a>
-  <a href="https://fabricmc.net"><img src="https://img.shields.io/badge/Fabric-0.17.2%2B-dbd0a7" alt="Fabric"></a>
+  <a href="https://fabricmc.net"><img src="https://img.shields.io/badge/Fabric-0.19.2%2B-dbd0a7" alt="Fabric"></a>
 </p>
 
 ---
@@ -36,7 +36,7 @@ This opens up builds that were previously tedious or impossible to tune, such as
   <tr>
     <td><b>Before</b></td>
     <td><b>After</b></td>
-</tr>         
+  </tr>         
   <tr>
     <td><a href=".github/images/before.png"><img src=".github/images/before.png" alt="Before: a mining tunnel lit with with torches placed every block"></a></td>                                                                                                                                                           
     <td><a href=".github/images/after.png"><img src=".github/images/after.png" alt="After: the same tunnel fully lit with evenly spaced torches"></a></td>
@@ -63,6 +63,10 @@ This opens up builds that were previously tedious or impossible to tune, such as
     - **Random** — Selects one item at random for each activation.
 
 <table style="text-align:center;">
+  <tr>
+    <td><b>Single Item</b></td>
+    <td><b>Multiple Items</b></td>
+</tr>
   <tr>
     <td><a href=".github/images/configure_1.png"><img src=".github/images/configure_1.png" alt="Configuring the filter to place a lantern every 4 blocks"></a></td>                                                                                                                                                           
     <td><a href=".github/images/configure_2.png"><img src=".github/images/configure_2.png" alt="Configuring the filter to place each torch in sequence every 2 blocks"></a></td>
@@ -94,10 +98,29 @@ Crafting a configured Interval Filter resets all stored settings back to default
 3. Set the desired Block Interval and optionally an Initial Offset.
 4. Add up to 6 items to the filter slots. Choose Strict or Best Effort mode depending on whether missed placements
    should be skipped or retried...and choose Sequential or Random if using multiple items.
-5. Place the configured Interval Filter into the filter slot of a Deployer on your contraption.
+5. Place the configured Interval Filter into the filter slot of a Deployer on your contraption or vehicle.
 
-> **Note:** The Interval Filter only works in a Deployer's filter slot on moving contraptions. It cannot be used in
-> other filter slots.
+> **Note:** The Interval Filter only works in a Deployer's filter slot on moving contraptions or Create Aeronautics
+> vehicles. It cannot be used in other filter slots, and a Deployer on a stationary block will not activate with it.
+
+---
+
+## Create Aeronautics
+
+With [Create Aeronautics](https://modrinth.com/mod/create-aeronautics) installed, Deployers on Aeronautics vehicles also
+support the Interval Filter. This is optional — the mod works without it.
+
+- Only horizontal distance counts toward the interval, so climbing or descending doesn't affect spacing.
+- The first direction the vehicle moves in is treated as forward. Reversing winds the interval pattern back without placing,
+  so it stays aligned when the vehicle drives forward again.
+- Deployers don't need rotational power; placement is driven by distance traveled.
+
+**Known limitations:**
+
+- Vehicles must supply items to deployers, e.g. via a funnel or chute.
+- Deployers can only place held items; cycling through multiple filter items is not supported.
+- Rotation-sensitive blocks (e.g. stairs and logs) may follow the vehicle's orientation rather than the world's.
+- Placement is less precise than on Create contraptions, so spacing may vary.
 
 ---
 
@@ -105,6 +128,11 @@ Crafting a configured Interval Filter resets all stored settings back to default
 
 - **Train Relocation** — Using a Wrench to pick up and relocate a train resets the interval counter, offset, and
   sequence order. Regular stops (such as stations) do not reset progress.
+- **Teleporting** — Teleporting or relocating a contraption restarts the pattern rather than counting as distance
+  traveled. Trains keep their pattern through portals.
+- **Reversing** — Nothing is placed while a contraption travels in reverse, but the pattern is remembered and
+  continues unbroken when it moves forward again. Forward is the front of a train, or the first direction other
+  contraptions move.
 - The filter can be reconfigured at any time by right-clicking it in your hand. Placing it back into the Deployer
   applies the updated settings immediately.
 
@@ -122,15 +150,3 @@ continues to advance.
 
 **Can I use multiple Interval Filters on the same contraption?**
 Yes. Each Deployer tracks its own interval state independently.
-
----
-
-## Requirements
-
-- **Minecraft** 1.21.1 / 1.20.1
-- **Mod Loader:** NeoForge 21.1.181+ / Forge 47.3.30+ / Fabric 0.17.2+
-- **Create:** 6.0.7+
-
----
-
-*Licensed under GNU GPL 3.0*

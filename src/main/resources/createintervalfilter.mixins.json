@@ -4,9 +4,12 @@
   "package": "dev.ausmez.createintervalfilter.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CarriageMixin",
     "DeployerBlockEntityMixin",
     "DeployerMovementBehaviourMixin",
-    "FilteringBehaviourMixin"
+    "FilteringBehaviourMixin",
+    "MovementContextMixin",
+    "TrainRelocatorMixin"
   ],
   "client": [],
   "injectors": {

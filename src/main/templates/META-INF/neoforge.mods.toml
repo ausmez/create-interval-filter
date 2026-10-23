@@ -36,3 +36,10 @@ type = "required"
 versionRange = "[6.0.7,6.1.0)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.${ mod_id }]]
+modId = "sable"
+type = "optional"
+versionRange = "[1.2.2,)"
+ordering = "NONE"
+side = "BOTH"

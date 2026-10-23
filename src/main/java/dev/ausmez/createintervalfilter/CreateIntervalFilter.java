@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -23,6 +24,7 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 public class CreateIntervalFilter {
     public static final String MODID = "createintervalfilter";
     public static final CreateRegistrate REGISTRATE = buildRegistrate();
+    public static final boolean SABLE_LOADED = ModList.get().isLoaded("sable");
 
     public CreateIntervalFilter(IEventBus modEventBus, ModContainer modContainer) {
         ModDataComponents.register(modEventBus);
