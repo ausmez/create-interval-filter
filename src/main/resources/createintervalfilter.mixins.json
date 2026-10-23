@@ -3,10 +3,14 @@
   "minVersion": "0.8",
   "package": "dev.ausmez.createintervalfilter.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "createintervalfilter.mixins.refmap.json",
   "mixins": [
+    "CarriageMixin",
     "DeployerBlockEntityMixin",
     "DeployerMovementBehaviourMixin",
-    "FilteringBehaviourMixin"
+    "FilteringBehaviourMixin",
+    "MovementContextMixin",
+    "TrainRelocatorMixin"
   ],
   "client": [],
   "injectors": {
