@@ -60,6 +60,9 @@ dependencies {
 	// Create - dependencies are added transitively
 	modImplementation("com.simibubi.create:create-fabric:${create_fabric_version}")
 
+	// EMI drag-drop support for the filter screen
+	modCompileOnly("dev.emi:emi-fabric:$emi_version")
+
 	// Development QOL
 	modLocalRuntime("com.terraformersmc:modmenu:$modmenu_version")
 
