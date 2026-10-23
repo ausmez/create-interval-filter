@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "dev.ausmez.createintervalfilter.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"DeployerBlockEntityMixin",
+		"DeployerMovementBehaviourMixin",
+		"FilteringBehaviourMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

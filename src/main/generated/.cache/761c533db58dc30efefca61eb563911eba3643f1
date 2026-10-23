@@ -1,0 +1,8 @@
+// 1.20.1	2026-05-01T17:05:14.815654876	Create: Interval Filter/Registrate Provider for createintervalfilter [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+83c9ab16c7f1dbbc5a799edf250f2823a220add5 data/createintervalfilter/recipes/interval_filter_clear.json
+5d9162c68396287148ea35f65916bdda313c737d assets/createintervalfilter/models/item/interval_filter.json
+6fb4146ef76db84fdcbf2fbbbaa7b434160190a6 data/createintervalfilter/advancements/recipes/misc/interval_filter_clear.json
+2d534c078f500f1f71be37630a45de1ce5dce712 data/createintervalfilter/recipes/interval_filter.json
+7897550876b82b62d661db88b03e590414ce5177 assets/createintervalfilter/lang/en_ud.json
+ad00abde5b452b8cdc443e623af07be0b71b89a8 assets/createintervalfilter/lang/en_us.json
+e276aeb9885a68d25a298a6a9444d16a1e1b4fff data/createintervalfilter/advancements/recipes/misc/interval_filter.json

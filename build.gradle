@@ -1,0 +1,124 @@
+plugins {
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+	id 'maven-publish'
+}
+
+version = "$mod_version+mc-$minecraft_version-$mod_loader"
+group = project.maven_group
+base.archivesName = mod_id
+
+repositories {
+	maven { url = "https://maven.createmod.net/" }
+	maven { url = "https://maven.ithundxr.dev/snapshots" }
+
+	maven { url = "https://mvn.devos.one/releases" } // Porting Lib releases
+	maven { url = "https://mvn.devos.one/snapshots" } // Create and several dependencies
+	maven { url = "https://maven.tterrag.com/" } // Registrate
+	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+	maven { url = "https://maven.parchmentmc.org/" }
+	maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } // Forge Config API Port
+	maven { // Fabric ASM for Porting Lib
+		url = "https://jitpack.io/"
+		content { includeGroupAndSubgroups("com.github") }
+	}
+	maven { url = "https://maven.shedaniel.me" } // Cloth Config, REI
+	maven { url = "https://maven.blamejared.com" } // JEI
+	maven { url = "https://maven.terraformersmc.com/releases" } // Mod Menu, EMI
+}
+
+fabricApi {
+	configureDataGeneration {
+		client = true
+	}
+}
+
+loom {
+	runs {
+		client {
+			programArgs "--username", "Dev"
+		}
+		datagen {
+			vmArgs "-Dporting_lib.datagen.existing_resources=${project.file("src/main/resources").absolutePath}",
+				   "-Dporting_lib.datagen.existing-mod=create",
+				   "-Dfabric-api.datagen.modid=createintervalfilter"
+		}
+	}
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.layered() {
+		officialMojangMappings()
+		parchment("org.parchmentmc.data:parchment-1.20.1:2023.09.03@zip")
+	}
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Create - dependencies are added transitively
+	modImplementation("com.simibubi.create:create-fabric:${create_fabric_version}")
+
+	// Development QOL
+	modLocalRuntime("com.terraformersmc:modmenu:$modmenu_version")
+
+	// Recipe Viewers - Create Fabric supports JEI, REI, and EMI.
+	// See root gradle.properties to choose which to use at runtime.
+	switch (recipe_viewer.toLowerCase(Locale.ROOT)) {
+		case "jei": modLocalRuntime("mezz.jei:jei-$minecraft_version-fabric:$jei_version"); break
+		case "rei": modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:$rei_version"); break
+		case "emi": modLocalRuntime("dev.emi:emi-fabric:$emi_version"); break
+		case "disabled": break
+		default: println("Unknown recipe viewer specified: $recipe_viewer. Must be JEI, REI, EMI, or disabled.")
+	}
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 17
+}
+
+java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename { "${it}_$projectName"}
+	}
+}
+
+// configure the maven publication
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+
+	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+	repositories {
+		// Add repositories to publish to here.
+		// Notice: This block does NOT have the same function as the block in the top level.
+		// The repositories here will be used for publishing your artifact, not for
+		// retrieving dependencies.
+	}
+}

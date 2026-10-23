@@ -1,0 +1,21 @@
+{
+  "createintervalfilter.gui.interval_filter.best_effort": "Best Effort",
+  "createintervalfilter.gui.interval_filter.best_effort.description": "Skip invalid positions and keep trying the next position",
+  "createintervalfilter.gui.interval_filter.interval": "Block Interval",
+  "createintervalfilter.gui.interval_filter.interval.description": "Blocks between each placement trigger",
+  "createintervalfilter.gui.interval_filter.offset": "Initial Offset",
+  "createintervalfilter.gui.interval_filter.offset.description": "Blocks before first placement",
+  "createintervalfilter.gui.interval_filter.placement_mode": "Placement Mode",
+  "createintervalfilter.gui.interval_filter.placement_mode.description": "Active when multiple filter items set",
+  "createintervalfilter.gui.interval_filter.random": "Random",
+  "createintervalfilter.gui.interval_filter.sequential": "Sequential",
+  "createintervalfilter.gui.interval_filter.strict": "Strict",
+  "createintervalfilter.gui.interval_filter.strict.description": "Only deploy at exact interval positions",
+  "item.createintervalfilter.interval_filter": "Interval Filter",
+  "item.createintervalfilter.interval_filter.tooltip.behaviour1": "Opens the _configuration interface_.",
+  "item.createintervalfilter.interval_filter.tooltip.condition1": "When R-Clicked",
+  "item.createintervalfilter.interval_filter.tooltip.interval": "Every %s block%s",
+  "item.createintervalfilter.interval_filter.tooltip.offset": "(+%s initial offset)",
+  "item.createintervalfilter.interval_filter.tooltip.summary": "_Triggers_ item placement at fixed movement _intervals_. Can be used in Deployer _Filter Slots_ on Contraptions",
+  "itemGroup.createintervalfilter.base": "Create: Interval Filter"
+}
